@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695287059944",
+    "project_id": "wartalap-chats",
+    "storage_bucket": "wartalap-chats.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695287059944:android:7d5403cbba13856aef805d",
+        "android_client_info": {
+          "package_name": "com.diester.wartalap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCGF21a5cGfQ0o0X-Y5O0LrOkzxR87yQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
