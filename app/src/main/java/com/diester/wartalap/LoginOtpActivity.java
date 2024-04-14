@@ -1,6 +1,7 @@
 package com.diester.wartalap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -123,6 +124,12 @@ public class LoginOtpActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(LoginOtpActivity.this,LoginUsernameActivity.class);
                     intent.putExtra("phone",phoneNumber);
+
+                    SharedPreferences sh = getSharedPreferences("Login", MODE_PRIVATE);
+                    SharedPreferences.Editor ed = sh.edit();
+                    ed.putString("phone", phoneNumber);
+                    ed.putBoolean("log", true);
+                    ed.commit();
                     startActivity(intent);
                 }else{
                     AndroidUtil.showToast(getApplicationContext(),"OTP verification failed");
