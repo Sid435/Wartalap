@@ -1,7 +1,7 @@
 package com.diester.wartalap.model;
 
 
-import java.security.Timestamp;
+import com.google.firebase.Timestamp;
 
 public class ChatMessageModel {
     private String message;

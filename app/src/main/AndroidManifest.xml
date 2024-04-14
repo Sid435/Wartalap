@@ -16,10 +16,10 @@
         android:theme="@style/Theme.Wartalap"
         tools:targetApi="31">
         <activity
-            android:name=".SearchUserActivity"
+            android:name=".ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".SSearchUserActivity"
+            android:name=".SearchUserActivity"
             android:exported="false" />
         <activity
             android:name=".LoginUsernameActivity"

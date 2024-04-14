@@ -1,6 +1,7 @@
 package com.diester.wartalap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,10 @@ public class LoginWithPhoneNumber extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(LoginWithPhoneNumber .this,LoginOtpActivity.class);
+            SharedPreferences sh = getSharedPreferences("isLoggedIn", MODE_PRIVATE);
+            SharedPreferences.Editor ed = sh.edit();
+            ed.putString("phone", countryCodePicker.getFullNumberWithPlus());
+            ed.commit();
             intent.putExtra("phone",countryCodePicker.getFullNumberWithPlus());
             startActivity(intent);
         });

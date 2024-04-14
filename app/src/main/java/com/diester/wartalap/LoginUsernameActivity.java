@@ -1,6 +1,7 @@
 package com.diester.wartalap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,7 +39,7 @@ public class LoginUsernameActivity extends AppCompatActivity {
         letMeInBtn = findViewById(R.id.login_let_me_in_btn);
         progressBar =findViewById(R.id.login_progress_bar);
 
-        phoneNumber = getIntent().getExtras().getString("phone");
+        phoneNumber = getSharedPreferences("isLoggedIn", MODE_PRIVATE).getString("phone", "");
         getUsername();
 
         letMeInBtn.setOnClickListener((v -> {
@@ -69,6 +70,10 @@ public class LoginUsernameActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent = new Intent(LoginUsernameActivity.this,MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+                    SharedPreferences sh = getSharedPreferences("isLoggedIn",MODE_PRIVATE);
+                    SharedPreferences.Editor ed = sh.edit();
+                    ed.putBoolean("log", true);
+                    ed.commit();
                     startActivity(intent);
                 }
             }
